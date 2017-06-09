@@ -1,0 +1,41 @@
+MONITORING
+
+Soufiane BENCHRAA et Johanna BOITEUX
+
+Cette archive contient :
+- Utilities : dossier contenant les programmes à compiler but.c et position.c (voir plus bas)
+- main. o et robot.o
+- but.txt, but1.txt, but2.txt et position.txt, position2.txt : fichiers où le programme va écrire les informations de buts marqués et de position reçues depuis Beebotte
+- main.c : programme principal
+- le makefile du programme
+- robot.h et robot.c
+
+Compilation du programme Monitoring :
+Avec le terminal, se placer dans le dossier Monitoring_BENCHRAA_BOITEUX puis entrer les commandes make puis ./Monitoring pour lancer l'exécutable.
+Parmi les adresses IP que vous insérez, mettez ip1=128.45.44.46 dans l'un des 3 premiers c'est a dire "equipe1" pour tester les buts.
+Puis, mettez 133.35.33.36 dans l'un des 3 derniers pour tester l'ajout des positions.
+Ouvrez deux autres terminaux :
+- Compilez le programme position.c avec la commande : gcc position.c -o PositionBeebotte
+- Exécutez-le avec la commande : ./PositionBeebotte
+- PositionBeebotte envoie désormais une position et une adresse à Beebotte qu'on devra détecter. 
+- Compilez le programme but.c avec la commande : gcc but.c -o ButBeebotte
+- Exécutez-le avec la commande : ./ButBeebotte
+- ButBeebotte envoie désormais l'adresse à Beebotte qu'on devra détecter.
+
+Ce qui fonctionne :
+Dans un premier temps, nous avons commencé par créer des structures aux robots, pour pouvoir :
+- insérer et afficher leurs positions;
+- insérer leurs adresses IP pour incrémenter le score.
+En effet, nous avons choisi de présenter l'incrémentation du score et l'identification de la partie.
+Notre programme incrémente le score, après l'envoi par les validateurs de buts d'un message sur BeeBotte contenant l'adresse IP du buteur.
+
+Ce qui ne fonctionne pas :
+- Interface graphique (non implémentée par manque de temps)
+
+Autres particularités :
+
+
+
+La partie dure 6 min et commence dès l'envoi de l'identifiant de la partie à Beebotte.
+
+Vous pouvez redémarrer le programme et mettre ip1=128.45.44.46 dans l'un des 3 derniers jours pour voir le score des deux équipes s'incrémenter.
